@@ -1,0 +1,345 @@
+body{
+    background: url(./icons/bg.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+::selection{
+    background: rgb(251, 123, 145);
+    color: #fff;
+}
+
+.side-nav{
+    height: 100vh;
+    width: 150px;
+    background: linear-gradient(to top, rgb(72, 51, 255),  rgb(253, 73, 103));
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.live-clock{
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+} 
+
+.clock-icon , .alarm-icon{
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+}
+
+
+.clock{
+    height: 250px;
+    width: 250px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+.full-clock{
+    margin-left: 40vw;
+    margin-top: 70px;
+}
+
+
+.hand{
+    border-bottom: 3px solid #fff;
+    width: 90px;
+}
+
+.sec-hand{
+    position: relative;
+    transform: rotate(90deg);
+    top: -20px;
+    left: 30px;
+    transition: all .05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    transform-origin: 100%;
+ }
+
+.min-hand{
+    margin-top: 40px;
+    transform: rotate(90deg);
+    border-bottom: 3px solid  rgb(255, 255, 255);
+    position: relative;
+    top: -62px;
+    left: 30px;
+    transition: all .05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    transform-origin: 100%;
+ }
+.hour-hand{
+    position: relative;
+    margin-top: 40px;
+    width: 60px;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    transform: rotate(90deg);
+    top: -105px;
+    left: 60px;
+    transition: all .05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    transform-origin: 100%;
+ }
+
+/* numbers */
+ .twelve{
+    font-family: 'Courier New', Courier, monospace;
+     position: relative;
+     left: 110px;
+     top: -10px;
+     color: rgb(65, 65, 65);
+     font-weight: 1000;
+ }
+
+ .three{
+    font-family: 'Courier New', Courier, monospace;
+     position: relative;
+     top: 70px;
+     left: 10px;
+     color: rgb(65, 65, 65);
+     font-weight: 1000;
+ }
+
+ .six{
+    font-family: 'Courier New', Courier, monospace;
+     position: relative;
+     left: 115px;
+     top: 140px;
+     color: rgb(65, 65, 65);
+     font-weight: 1000;
+ }
+
+ .nine{
+    font-family: 'Courier New', Courier, monospace;
+     position: relative;
+     left: 225px;
+     color: rgb(65, 65, 65);
+     font-weight: 1000;
+  }
+
+
+/* Displayed test modifications */
+  .display-sec{
+      font-family: 'Courier New', Courier, monospace;
+      color: rgb(65, 65, 65);
+  }
+
+  .time-display{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-right: 40vw;
+ }
+
+
+.active{
+    background-color: rgba(255, 255, 255, 0.205);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+.full-alarm{
+    transform: translateY(-400px);
+    visibility: hidden;
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+.time-alarm{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 90px;
+    color: rgb(59, 59, 59);
+}
+
+.time-input{
+    width: 20%;
+    height: 50px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(65, 65, 65);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.479);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+::placeholder{
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+.set-btn{
+    cursor: pointer;
+    width: 15%;
+    height: 50px;
+    margin-left: 30px;
+    border: none;
+    outline: none;
+    background-color: rgb(34, 128, 251);
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.live-clock-remember{
+    margin-left: 50px;
+    margin-top: 200px;
+}
+
+.remember{
+    display: inline-block;
+    padding: 20px;
+    background: rgb(253, 73, 103);
+    color:#fff;
+    position: absolute;
+    right: -320px ;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 10;
+}
+
+span{
+    cursor: pointer;
+    position: absolute;
+    right: 80px;
+    background: rgb(253, 73, 103);
+    color:#fff;
+    font-size: 25px;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif ;
+    border-radius: 10px;
+    animation: spanEl 1s infinite;
+}
+
+
+@keyframes spanEl {
+    0%{
+        transform: translateX(-5px);
+    }
+
+    50%{
+        transform: translateX(-20px);
+    }
+
+
+    75%{
+        transform: translateX(-5px);
+    }
+
+    90%{
+        transform: translateX(-20px);
+    }
+
+    100%{
+        transform: translateX(0px);
+    }
+
+}
+
+span:hover{
+    animation: none;
+}
+
+
+.spanShifting{
+    right: 400px;
+    animation: none;
+}
+
+.noteShifting{
+    right: 0;
+}
+
+@media (max-width: 1024px) {
+    .time-display{
+        margin-right: 30vw;
+    }
+
+    .set-btn{
+        width: 12vw;
+    }
+
+    .time-input{
+        width: 25%;
+    }
+}
+
+@media (max-width: 600px) {
+    .remember{
+        bottom: 0;
+        border: 1px solid #000;
+    }
+    
+    span{
+        bottom: 0;
+        border: 1px solid #000;
+    }
+
+    .time-display{
+        margin-right: 10vw;
+    }
+
+    .full-alarm{
+        margin-top: 20%;
+    }   
+}
+
+@media (max-width: 485px) {
+    .side-nav{
+        z-index: 10;
+        width: 100vw;
+        height: 20vh;
+        flex-direction: row;
+        background: linear-gradient(to right, rgb(72, 51, 255),  rgb(253, 73, 103));
+        top: 28px;
+    }
+
+    .clock-icon, .alarm-icon{
+        height: 50px;
+        width: 50px;
+    } 
+
+    .active{
+        padding: 10px;
+        height: 90px;
+    }
+
+    .full-clock{
+        margin-top: 230px;
+        margin-left: 120px;
+    }
+
+    .remember{
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    span{
+        right: 15px;
+    }
+
+    .spanShifting{
+        right: 350px;
+    }
+}
+
+@media (max-width: 375px) {
+    .full-clock{
+        margin-left: 14vw;
+    }
+
+}

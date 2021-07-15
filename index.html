@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="./style.css">
+        <title>Clock</title>
+    </head>
+    <body>
+        
+        <div class="side-nav">
+            <div class="clock-icon-div ">
+                <img src="./icons/clock icon.png" alt="" class="clock-icon icon">
+                <p class="live-clock ">Live Clock</p>
+            </div>
+            
+            <div class="alarm-icon-div">
+                <img src="./icons/alarm icon.png" alt="" class="alarm-icon icon">
+                <p class="live-clock">Alarm Clock</p>
+            </div>
+            
+        </div>
+        
+        <span>&lt;</span>
+        <div class="remember">
+            <p class="note">Note: The live clock shows time of IST time zone.</p>
+            <p class="remember-note">Remember: set the time in the alarm in seconds.</p>
+        </div>
+
+
+     <div class="full-clock">
+        <div class="clock">
+
+            <!-- 3 and 9 are interchanged -->
+            <p class="numbers twelve">12</p>
+            <p class="numbers three">9</p>
+            <p class="numbers six">6</p>
+            <p class="numbers nine">3</p>
+
+            <div class="hands">
+                <div class="hand sec-hand"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand hour-hand"></div>
+            </div>
+
+        </div>
+
+
+    <div class="time-display">
+        <div class="hour"></div>
+        <div class="min"></div>
+        <div class="sec"></div>
+    </div>
+
+</div>
+
+
+ 
+ <div class="full-alarm">
+     <h1 class="time-alarm">0:00</h1>
+     
+     <input type="text" name="time input" class="time-input" placeholder="Set time">
+     <button class="set-btn">Set</button>
+    
+    </div>
+
+    
+    <script src="./app.js"></script>
+    <script src="./alarm.js"></script>
+</body>
+</html>
